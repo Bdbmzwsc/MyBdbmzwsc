@@ -72,14 +72,56 @@
         -moz-animation: headneon 1.5s ease-in-out infinite alternate;
         animation: headneon 1.5s ease-in-out infinite alternate;
     }
+    .head_nav {
+        margin: 0 auto;
+    }
+    .head_nav ul li{
+    float: left;
+    margin-right: 55px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.head_nav ul li a{
+    font-size: 16px;
+    color: #333333;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transform: all 0.2s;
+}
+
+.head_nav ul li a:hover{
+    color:#4b91c9;
+}
+.clear {
+        clear: both;
+    }
 
 </style>
 <body>
     <!----<img src="Images/head.jpg" class="round_icon" alt="">-->
-
+    <header class="head">
+        <div class="head_logo_div">
+            <img class="logo_img" src="Image/head.jpg"></a>
+        </div>
+        <div class="head_nav_div">
+            <nav class="head_nav">
+                <ul id="nav_ul">
+                    <li class="nav_li_on nav_ul_li"><a href="index.html">首页</a></li>
+                    <li class="nav_ul_li"><a href="index.html">下载</a></li>
+                    <li class="nav_ul_li"><a href="index.html">网页版工具</a></li>
+                    <!---- <li class="nav_ul_li">Hobby</li>-->
+                    <!--<li class="nav_ul_li">Contact</li>-->
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </header>
     <div class="head_img_div">
-        <img class="head_img" src="Image/head.jpg"
+        <img class="head_img" src="Image/head.jpg"></a>
     </div>
+    
     <h1><td style="margin:8px">Bdbmzwsc</td></h1>
     <p>                             Hi,你好，欢迎来到我的主页</p>
     <td style="padding-top:180px">这里空空如也（也不是空空如也）</td>
