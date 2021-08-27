@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bdbmzwsc的算法室</title>
+    <style>
+        h2 {
+            width: 300px;
+            height: 200px;
+            border: 4px solid #00ffff;
+            margin: 0 auto
+        }
+    </style>
+</head>
+<body bgcolor="LightSkyBlue">
+    <h1 style="text-align:center">棋盘初始点算法</h1>
+    <h3 style="text-align:center">简介：在棋盘里，通常用数字来描述某一点位，观察之后可以发现棋盘的数字是一层层嵌套，没一层的结束位都是右上角的数字<br />所以，棋盘结束位算法可以通过层数算出结束点数字，更快定位</h3>
+    <h3 style="text-align:center;color:gold">看图</h3>
+    <img src="img/qiimg.png" alt="试例" />
+    <p style="color:white">
+        首先要算出结束位，先要算出每一层总数，而算出每一层的总数就需要先算出一边的总数(有那么亿点套)<br />
+        啊话不多说开始算<br />
+        认真观察可发现从第二层开始想上加层都是往两边各加1,所以第一个公式就出来了<br />
+        首先去掉第一层，也就是n-1,再乘2算出加的总数(n-1)*2<br />
+        然后再加上一（因为前面的公式只算了加的，中间还包括一个数)<br />
+        公式(n-1)*2+1<br />
+        优化(2n-1)<br />
+        再乘4就行了<br />
+        不会吧不会吧，不会真的有人以为我要犯错了吧，如果你直接乘4就会出现4个重复点，所以需要再-4<br />
+        (2n-1)*4-4<br />
+        优化<br />
+        8n-8<br />
+    <p style="color:gold;text-align:center;font-size:34px">____________________________________我是分割线_____________________________________________</p>
+    </p>
+    <p style="color:white">
+        啊好的第一个公式推导完了，第二个就是算出结束点的数了<br />
+        首先还是需要不管开始的第一层（因为上面的公式开始只能算第二层)<br />
+        思路是这样的:<br />
+        从第二层开始循环加总数，直到到达目标层，最后再加上一<br />
+        肿么样是不是很简单，方法就用高斯求和<br />
+    <p style="font-size:5px;color:aquamarine;text-align:center">不会吧不会吧，不会还有人不知道高斯求和吧:)</p>
+    开始的数都是8(第二层永远是8),头尾相加[8+(8n-8)]<br />
+    乘加的数（n-1)<br />
+    除以2，再加上一就完成了<br />
+    得出我们的公式<br />
+    <p style="font-size: 15px; color: aquamarine; text-align: center">[8+(8n-8)]*(n-1)/2+1</p>
+    优化下,就能得到我们的最终公式啦:<br />
+    <p style="font-size: 20px; color: gold; text-align: center">4n²-4n+1</p>
+
+    </p>
+    <p style="font-size:4px">友联:<a href="https://erha.vercel.app" target="_blank">二哈工作室</a></p>
+</body>
+</html>
